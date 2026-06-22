@@ -29,14 +29,15 @@ public class RotateWheel : MonoBehaviour
             if(rb.angularVelocity < -maxAngularVelocity) {
             rb.angularVelocity = -maxAngularVelocity;
         }
+            WheelGameManager.Instance.getAngularVelocity(rb.angularVelocity);
         }
         else if (Input.GetAxis("Horizontal") < 0)
         {
             if(rb.angularVelocity > maxAngularVelocity) {
                 rb.angularVelocity = maxAngularVelocity;
             } 
+            WheelGameManager.Instance.getAngularVelocity(rb.angularVelocity);
         }
-
         rb.AddTorque(-impulse*angularChangeInDegrees, ForceMode2D.Impulse);
     }
 }
