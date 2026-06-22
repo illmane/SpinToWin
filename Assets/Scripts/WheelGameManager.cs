@@ -18,8 +18,7 @@ public class WheelGameManager : MonoBehaviour
     }
     public void getAngularVelocity(float wheelVelocity)
     {
-        print("this is the angular velocity of the helm: " + wheelVelocity);
-        angularVelocity = wheelVelocity;
+        angularVelocity = Mathf.Abs(wheelVelocity);
             
     }
 }

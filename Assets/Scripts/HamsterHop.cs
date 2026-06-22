@@ -14,21 +14,20 @@ public class HamsterHop : MonoBehaviour
     void Update()
     {
         ManageRunAnimations();
-        print(FinishedAnimation);
     }
 
     private void ManageRunAnimations()
     {
-        if (WheelGameManager.Instance.angularVelocity > 10 && FinishedAnimation == true || WheelGameManager.Instance.angularVelocity < -10 && FinishedAnimation == true)
+        // if (WheelGameManager.Instance.angularVelocity > 10 && FinishedAnimation == true || WheelGameManager.Instance.angularVelocity < -10 && FinishedAnimation == true)
+        if(WheelGameManager.Instance.angularVelocity >= 50f && FinishedAnimation == true )
         {
             anim.SetTrigger("Slow_Run");
             FinishedAnimation = false;
         }
-        else if (WheelGameManager.Instance.angularVelocity < 10 && WheelGameManager.Instance.angularVelocity > 0.1 || WheelGameManager.Instance.angularVelocity > -10 && WheelGameManager.Instance.angularVelocity < 0.1)
+        // else if (WheelGameManager.Instance.angularVelocity < 10 && WheelGameManager.Instance.angularVelocity > 0.1 || WheelGameManager.Instance.angularVelocity > -10 && WheelGameManager.Instance.angularVelocity < 0.1)
+        else if(WheelGameManager.Instance.angularVelocity < 50f)
         {
             anim.SetBool("IsStill", true);
-            FinishedAnimation = true;
-
         }
     }
 
