@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ship
+  - OceanWave
+  - Hamster
   - 
   - 
   - 
@@ -40,6 +40,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ship
+    uniqueID: 2998615821
+    locked: 0
+  - name: Ocean
+    uniqueID: 1316525747
     locked: 0
   - name: Player
     uniqueID: 988154605
