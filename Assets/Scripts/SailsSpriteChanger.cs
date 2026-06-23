@@ -18,11 +18,11 @@ public class SailsSpriteChanger : MonoBehaviour
 
     private void ChangeSails()
     {
-        if (WheelGameManager.Instance.angularVelocity >= 50f)
+        if (WheelGameManager.Instance.angularSpeed >= 200f)
         {
             sp.sprite = AllSailsSprites[1];
         }
-        else if (WheelGameManager.Instance.angularVelocity < 50f)
+        else if (WheelGameManager.Instance.angularSpeed < 200f)
         {
             sp.sprite = AllSailsSprites[0];
             

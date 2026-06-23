@@ -3,6 +3,7 @@ using UnityEngine;
 public class WheelGameManager : MonoBehaviour
 {
     public static WheelGameManager Instance;
+    public float angularSpeed;
     public float angularVelocity;
 
     void Awake()
@@ -18,7 +19,7 @@ public class WheelGameManager : MonoBehaviour
     }
     public void getAngularVelocity(float wheelVelocity)
     {
-        angularVelocity = Mathf.Abs(wheelVelocity);
-            
+        angularSpeed = Mathf.Abs(wheelVelocity);
+        angularVelocity = wheelVelocity;
     }
 }

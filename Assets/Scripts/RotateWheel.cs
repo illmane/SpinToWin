@@ -6,18 +6,24 @@ public class RotateWheel : MonoBehaviour
     public float angularChangeInDegrees;
     public float maxAngularVelocity;
     private Rigidbody2D rb;
+
+    private float InitialLocalPosition;
+
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        InitialLocalPosition = transform.localPosition.x;
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         InputPlayerRotation();
+        gameObject.transform.localPosition = new Vector2(InitialLocalPosition, transform.localPosition.y);
     }
 
     private void InputPlayerRotation()
