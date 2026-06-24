@@ -6,11 +6,6 @@ public class HealthSystem : MonoBehaviour
     public int CurrentHealth;
     public int MaxHealth;
     public Image[] allHearts;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        CurrentHealth = MaxHealth;
-    }
 
     // Update is called once per frame
     void Update()
