@@ -7,6 +7,7 @@ public class AnchorBehaviour : MonoBehaviour
         if (collision.gameObject.tag == "Ship")
         {
             collision.GetComponent<InvinsibilityManager>().MakeInvinsible();
+            collision.GetComponent<HealthSystem>().DamageShip(1);
         }
     }
 }

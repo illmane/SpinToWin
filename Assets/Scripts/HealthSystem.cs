@@ -7,6 +7,12 @@ public class HealthSystem : MonoBehaviour
     public int MaxHealth;
     public Image[] allHearts;
 
+
+    void Start()
+    {
+        CurrentHealth = MaxHealth;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -24,8 +30,20 @@ public class HealthSystem : MonoBehaviour
             else
             {
                 allHearts[i].enabled = false;
-                
             }
         }
+    }
+
+    public void DamageShip(int amount)
+    {
+        if (CurrentHealth > 0)
+        {
+            CurrentHealth -= amount;
+        }
+        else
+        {
+            print("You died");
+        }
+
     }
 }
