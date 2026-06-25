@@ -45,8 +45,6 @@ public class HealthSystem : MonoBehaviour
         else
         {
             CurrentHealth -= amount;
-            print(CurrentHealth);
         }
-
     }
 }

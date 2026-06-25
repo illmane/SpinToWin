@@ -6,7 +6,7 @@ public class AnchorBehaviour : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(DestroyAnhor());
+        StartCoroutine(DestroyAncor());
     }
 
 
@@ -16,11 +16,13 @@ public class AnchorBehaviour : MonoBehaviour
         {
             collision.GetComponent<InvinsibilityManager>().MakeInvinsible();
             collision.GetComponent<HealthSystem>().DamageShip(1);
+            
+            PointsManager.Instance.AddPoint(-1);
         }
     }
 
 
-    private IEnumerator DestroyAnhor()
+    private IEnumerator DestroyAncor()
     {
         yield return new WaitForSeconds(4f);
         Destroy(gameObject);
