@@ -51,5 +51,8 @@ TagManager:
   - name: Player
     uniqueID: 988154605
     locked: 0
+  - name: Anchor
+    uniqueID: 4082356933
+    locked: 0
   m_RenderingLayers:
   - Default

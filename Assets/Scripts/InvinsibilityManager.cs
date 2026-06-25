@@ -17,7 +17,7 @@ public class InvinsibilityManager : MonoBehaviour
     {
         if (IsInvincible == false)
         {
-            StartCoroutine(ShowInvincibility());
+            StartCoroutine(ShowandRevertInvincibility());
             IsInvincible = true;
 
             foreach (BoxCollider2D bc in bcs)
@@ -27,7 +27,7 @@ public class InvinsibilityManager : MonoBehaviour
         }
     }
 
-    private IEnumerator ShowInvincibility(){
+    private IEnumerator ShowandRevertInvincibility(){
         Sps[0].color = new Color(1f, 1f, 1f, 0.5f);
         Sps[1].color = new Color(1f, 1f, 1f, 0.5f);
 
@@ -35,5 +35,10 @@ public class InvinsibilityManager : MonoBehaviour
         Sps[0].color = new Color(1f, 1f, 1f, 1f);
         Sps[1].color = new Color(1f, 1f, 1f, 1f);
 
+        foreach (BoxCollider2D bc in bcs)
+        {
+            bc.enabled = true;
+        }
+        IsInvincible = false;
     }
 }
