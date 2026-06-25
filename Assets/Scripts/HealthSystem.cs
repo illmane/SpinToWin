@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,7 @@ public class HealthSystem : MonoBehaviour
 {
     public int CurrentHealth;
     public int MaxHealth;
+    public static event Action OnDeath;
     public Image[] allHearts;
 
 
@@ -36,13 +38,14 @@ public class HealthSystem : MonoBehaviour
 
     public void DamageShip(int amount)
     {
-        if (CurrentHealth > 0)
+        if (CurrentHealth <= 1)
         {
-            CurrentHealth -= amount;
+            OnDeath?.Invoke();
         }
         else
         {
-            print("You died");
+            CurrentHealth -= amount;
+            print(CurrentHealth);
         }
 
     }

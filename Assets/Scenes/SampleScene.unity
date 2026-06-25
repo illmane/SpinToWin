@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 51092486}
   - component: {fileID: 51092490}
   - component: {fileID: 51092489}
+  - component: {fileID: 51092491}
   m_Layer: 0
   m_Name: GoingBiscoff
   m_TagString: Ship
@@ -324,6 +325,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ed881634e4480b4fbdfa21289d33518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &51092491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51092484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42895e1de30c7b443b9b940cc2890d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &69257440
