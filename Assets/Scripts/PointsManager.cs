@@ -5,7 +5,8 @@ using UnityEngine;
 public class PointsManager : MonoBehaviour
 {
     public static PointsManager Instance;
-    public float TotalPoints;
+    public static float TotalPoints;
+    public float AnchorPoints;
     public float TimerAmount;
     private float Timer;
 
@@ -21,6 +22,8 @@ public class PointsManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        TeleporterScript.OnTeleport += CalcualtePoints;
     }
 
     void Start()
@@ -33,9 +36,9 @@ public class PointsManager : MonoBehaviour
         CountSeconds();
     }
 
-    public void AddPoint(int amount)
+    public void AddPoint(float amount)
     {
-        TotalPoints += amount;
+        AnchorPoints += amount;
     }
 
     private void CountSeconds()
@@ -43,7 +46,6 @@ public class PointsManager : MonoBehaviour
         if (Timer <= 0f)
         {
             secondsCounter += 1;
-            print(secondsCounter);
 
             Timer = TimerAmount;
         }
@@ -51,5 +53,10 @@ public class PointsManager : MonoBehaviour
         {
             Timer -= Time.deltaTime;
         }
+    }
+
+    private void CalcualtePoints()
+    {
+        TotalPoints = (1f/secondsCounter)*100 + AnchorPoints;
     }
 }
